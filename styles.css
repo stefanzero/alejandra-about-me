@@ -1,0 +1,149 @@
+/* =======================
+   Design tokens (variables)
+   ======================= */
+:root {
+  --bg-dark: #2b1f1f;           /* page background */
+  --text:    #f0e5df;           /* default light text */
+  --muted:   #e9c2b5;           /* accent / headings */
+  --border:  rgba(255,255,255,0.35);
+
+  --font-heading: "Audiowide", sans-serif;
+  --font-body: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Effects */
+  --glass-bg: rgba(255,255,255,0.05);  /* translucent panel */
+  --glass-blur: 8px;
+
+  /* Spacing */
+  --nav-offset: 64px; /* height of fixed navbar */
+}
+
+/* =======================
+   Base
+   ======================= */
+
+
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: var(--font-body);
+  padding-top: var(--nav-offset);      /* keeps content below navbar!!!!!! */
+}
+.projects-section, .hero-section,  .contact-section {
+    min-height: 85vh;                 /* large hero */
+  display: flex;
+  align-items: center;
+  background-image: 
+  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+  url('saturn-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--muted);
+} /* i dont think i have h1, i deleted it from html but just in case lol */
+
+/* Links that sit on dark backgrounds */
+a, .link-light {
+  color: var(--text);
+  text-decoration-color: rgba(255,255,255,0.35);
+}
+
+
+/* Softer borders on dark glass panels */
+.border-light { border-color: var(--border) !important; }
+
+
+/* =======================
+   Navbar
+   ======================= */
+.navbar {
+  /* keeps text readable over images */
+  backdrop-filter: blur(var(--glass-blur));
+  
+}
+.navbar a{ /* I used this one to change my name's font */
+    color: var(--muted);
+    font-family: "Audiowide", sans-serif;
+}
+.navbar .nav-link { color: var(--muted);
+font-family: "Audiowide", sans-serif; } /* i used this one to change the font in the other buttons in the navbar */
+.navbar .nav-link:hover { color: var(--text); } /* text turn white when i hover yay*/
+
+/* =======================
+   Hero section (Saturn background)
+   ======================= */
+.hero-section {
+  min-height: 85vh;                 /* large hero */
+  display: flex;
+  align-items: center;
+
+  /* Option B (recommended): image + subtle dark overlay for contrast */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("saturn-hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-section .border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* =======================
+   Projects section (same space vibe), flopped :( couldnt figure it out 
+   ======================= */
+
+/* Project “chips, tiny buttons ” */
+.projects border {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border-color: var(--border);
+}
+
+/* =======================
+   Portrait + images
+   ======================= */
+
+   img.rounded-circle {
+    
+  /* keeps it crisp inside the circle */
+  object-fit: cover;
+  border: 3px solid var(--border);
+}
+
+
+.section-title { margin-bottom: 0.5rem; }
+
+
+
+
+/* =======================
+   Footer
+   ======================= */
+footer {
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,0.15);
+}
+
+/* =======================
+   Responsive tweaks
+   ======================= */
+@media (max-width: 991.98px) {
+  :root { --nav-offset: 60px; }        /* slightly smaller navbar on mobile, ask stefan about it */
+  .hero-section { min-height: 70vh; }  /* reduce hero height on small screens */
+}
+
+@media (max-width: 575.98px) {
+  .display-4 { font-size: 2rem; }      /* scale big title down on phones */
+}
+
