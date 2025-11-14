@@ -1,89 +1,110 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap link so you can use the important classes -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Bootstrap link so you can use the important classes -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
 
-  <!-- Your fonts + styles go here, dont forget to change it for the one you 
+    <!-- Your fonts + styles go here, dont forget to change it for the one you 
    used in figma 
    remember your css fiel should always be called styles, don't make that rookie
    mistake again! -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet"/>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    >
+    <link href="styles.css" rel="stylesheet">
 
-  <title>Alejandra R. Estevez</title>
-  
-
-</head>
-<body>
-
-  <!-- ======NAVBAR part  ================= -->
-  <!--the fixed-top allows me to sort of freeze the nav bar, im not too sure why toggler is there still
+    <title>Alejandra R. Estevez</title>
+  </head>
+  <body>
+    <!-- ======NAVBAR part  ================= -->
+    <!--the fixed-top allows me to sort of freeze the nav bar, im not too sure why toggler is there still
   but i think it's for when the page is collapsed? it wouldn;t work without it, ask professolr about it. -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-semibold" href="index.html">Alejandra R. Estevez</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-transparent fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html"
+          >Alejandra R. Estevez</a
+        >
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div id="navMain" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <div id="top"></div>
-  <section id="projects" class="projects-section py-5">
-    <div class="container position-relative">
-      <!-- Center title -->
-      <div class="text-center mb-5">
-        <h2 class="display-5 mb-1">Projects</h2>
-        <p class="opacity-75 mb-0">A few areas I’m exploring</p>
-      </div>
-
-      <!-- Four labeled areas (wireframe shows labels around the planet) -->
-      <!-- Layout with grid; exact pixel positioning/opacity handled in CSS later if you want them floating -->
-      <div class="row g-4 justify-content-center">
-        <div class="col-6 col-md-3">
-          <div class="p-3 text-center border rounded-4 h-100">Arduino</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 text-center border rounded-4 h-100">C++</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 text-center border rounded-4 h-100">Math</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 text-center border rounded-4 h-100">Statistics</div>
+        <div id="navMain" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-  <footer class="py-4">
-    <div class="container text-center small opacity-75">
-      © <span id="year"></span> Alejandra R. Estevez
-    </div>
-  </footer>
+    </nav>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <header class="my-hidden-header">
+      <h1 class="text-center">Alejandra R. Estevez</h1>
+      <h2>Projects</h2>
+    </header>
 
-  <!-- Tiny helper to update year -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <main id="projects" class="projects-section py-5">
+      <!-- <div class="container position-relative"> -->
+      <div class="container text-center">
+        <!-- Center title -->
+        <header class="mb-5">
+          <h2 class="display-5 mb-1">Projects</h2>
+          <p class="opacity-75 mb-0">A few areas I’m exploring</p>
+        </header>
+
+        <!-- Four labeled areas (wireframe shows labels around the planet) -->
+        <!-- Layout with grid; exact pixel positioning/opacity handled in CSS later if you want them floating -->
+        <div class="row g-4 justify-content-center">
+          <div class="col-6 col-md-3">
+            <div class="p-3 text-center border rounded-4 h-100">Arduino</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-3 text-center border rounded-4 h-100">C++</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-3 text-center border rounded-4 h-100">Math</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-3 text-center border rounded-4 h-100">Statistics</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="py-4">
+      <div class="container text-center small opacity-75">
+        © <span id="year"></span> Alejandra R. Estevez
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tiny helper to update year -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
-

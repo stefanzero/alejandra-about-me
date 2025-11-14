@@ -26,13 +26,46 @@
 body {
   background: var(--bg-dark);
   color: var(--text);
-  font-family: var(--font-body);
+  font: 16px var(--font-body);
   padding-top: var(--nav-offset); /* keeps content below navbar!!!!!! */
 }
+
+figure {
+  display: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.my-hidden-header {
+  margin: 0;
+  padding: 0;
+  h1,
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+}
+
+.landing {
+  header {
+    padding: 0 10%;
+    justify-content: space-evenly;
+  }
+}
+
+.about-section,
 .projects-section,
 .hero-section,
 .contact-section {
-  min-height: 85vh; /* large hero */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  /* match bootstrap g-5 = 3rem */
+  padding: 3rem;
+  /* min-height: 85vh; */
+  /* set the height to the full height of the viewport minus the navbar and footer height */
+  min-height: calc(100vh - var(--nav-offset) - 4.5rem);
   display: flex;
   align-items: center;
   background-image:
@@ -88,11 +121,39 @@ a,
   color: var(--text);
 } /* text turn white when i hover yay*/
 
+.portrait {
+  display: flex;
+  /* match bootstrap g-5 = 3rem */
+  margin: 0 auto 3rem auto;
+  padding: 0;
+  figure {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    .img-container {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      /* make image responsive but constrain the max width */
+      width: 60%;
+      max-width: 20rem;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
 /* =======================
    Hero section (Saturn background)
    ======================= */
 .hero-section {
-  min-height: 85vh; /* large hero */
+  /* large hero */
+  /* min-height: 85vh;  */
+  min-height: calc(100vh - var(--nav-offset) - 4.5rem);
   display: flex;
   align-items: center;
 
@@ -147,16 +208,25 @@ footer {
    Responsive tweaks
    ======================= */
 @media (max-width: 991.98px) {
+  /* slightly smaller navbar on mobile */
   :root {
     --nav-offset: 60px;
-  } /* slightly smaller navbar on mobile, ask stefan about it */
-  .hero-section {
+  }
+  /* no need since there is a min-height calc rule on each page */
+  /* reduce hero height on small screens */
+  /* .hero-section {
     min-height: 70vh;
-  } /* reduce hero height on small screens */
+  } */
 }
 
 @media (max-width: 575.98px) {
   .display-4 {
     font-size: 2rem;
   } /* scale big title down on phones */
+  .about-section,
+  .projects-section,
+  .hero-section,
+  .contact-section {
+    padding: 1rem;
+  }
 }
